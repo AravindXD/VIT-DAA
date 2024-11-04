@@ -35,7 +35,7 @@ VIT-DAA/
 
 ## How to Use
   1. Run Solution Code: Each question’s solution can be executed individually.
-  2.	Run Input Generator: Use the input generator to create randomized inputs and log the runtime data.
+  2.	Run Input Generator: Use the input generator to create randomized inputs and log the runtime data.(Use g++ -std=c++11 to compile)
   3.	Plot Graphs: Open the graph notebook to visualize time complexity using the recorded runtime data.
 
 Each LPS explores time complexity and performance analysis in different ways, providing insights into algorithm efficiency.
