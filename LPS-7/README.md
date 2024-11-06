@@ -8,7 +8,7 @@
 - The time complexity of the Naive String Matching algorithm is O(m × n), where m is the length of the text and n is the length of the pattern.
 - The algorithm compares each possible substring of the text with the pattern.
 
-[View Interactive Plot](../docs/LPS7-q1.html)
+[View Interactive Plot](https://aravindxd.github.io/VIT-DAA/LPS7-q1.html)
 
 ![alt text](q1.png)
 
@@ -27,7 +27,7 @@ The plot shows:
   * Decreasing pattern check
 - The time complexity is O(m × n), where m is the text length and n is the pattern length, with a constant factor of 3 for the three checks.
 
-[View Interactive Plot](../docs/LPS7-q2.html)
+[View Interactive Plot](https://aravindxd.github.io/VIT-DAA/LPS7-q2.html)
 
 ![alt text](q1.png)
 

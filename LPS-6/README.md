@@ -8,7 +8,7 @@
 - The time complexity of this LCS algorithm is O(m × n), where m and n are the lengths of the two input strings.
 - The space complexity is optimized to O(n) by maintaining only two rows of the DP table.
 
-[View Interactive Plot](../docs/LPS6-q1.html)
+[View Interactive Plot](https://aravindxd.github.io/VIT-DAA/LPS6-q1.html)
 
 The plot shows:
 - A 3D scatter plot with points representing actual measurements.
@@ -21,7 +21,7 @@ The plot shows:
 - The time complexity for printing all LCSs can be exponential in the worst case, as there can be exponentially many longest common subsequences.
 - The base complexity for constructing the DP table remains O(m × n).
 
-[View Interactive Plot](../docs/LPS6-q2.html)
+[View Interactive Plot](https://aravindxd.github.io/VIT-DAA/LPS6-q2.html)
 
 The plot demonstrates:
 - A 3D scatter plot showing the relationship between the lengths of two input strings (m and n) and the computation time.
