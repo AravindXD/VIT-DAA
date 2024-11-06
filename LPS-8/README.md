@@ -1,4 +1,4 @@
-## Activity Selection Sort Recursive
+## [Activity Selection Sort Recursive](soln.cpp)
 Given a set ‘S’ of ‘n’ activities, implement the recursive greedy algorithm to select a subset of activities from S by selecting the task that finishes first. Sort the activities in ascending order based on finish time and then select the activities
 
 - Input Format
@@ -31,3 +31,7 @@ Given a set ‘S’ of ‘n’ activities, implement the recursive greedy algori
     ```
     a1 a4 a8 a11
     ```
+
+The algorithm follows the time complexity of the Sorting algorithm used to solve the problem
+
+![alt text](output.png)

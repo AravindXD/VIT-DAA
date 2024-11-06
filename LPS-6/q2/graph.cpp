@@ -44,30 +44,46 @@ int lcs_length(const string &s1, const string &s2, vector<vector<int>> &dp) {
     return dp[m][n];
 }
 
+string generate_string(int length, int variety) {
+    string result;
+    for(int i = 0; i < length; i++) {
+        result += char('A' + (i % variety));  // Create string with variety different characters
+    }
+    return result;
+}
+
 int main() {
     ofstream file("lcs_times.csv");
     file << "m,n,LCS Time (microseconds)\n";
 
-    for (int m = 5; m <= 10; m += 2) { // Adjust range as needed
-        for (int n = m + 2; n <= m + 5; ++n) { // Ensure n > m
-            string s1(m, 'A'); // Random strings of length m
-            string s2(n, 'B'); // Random strings of length n
+    // Test with larger range and more varied strings
+    for (int m = 5; m <= 15; m += 2) {
+        for (int n = m + 2; n <= 20; n += 2) {
+            // Create strings with more varied characters to generate multiple LCS
+            string s1 = generate_string(m, 3);  // Use 3 different characters
+            string s2 = generate_string(n, 3);  // Use 3 different characters
 
             vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+            
+            // Run multiple times and take average
+            const int runs = 5;
+            long long total_duration = 0;
+            
+            for (int run = 0; run < runs; run++) {
+                auto start = high_resolution_clock::now();
+                int lcs_len = lcs_length(s1, s2, dp);
+                set<string> lcs_set;
+                find_all_lcs(s1, s2, m, n, dp, "", lcs_set);
+                auto stop = high_resolution_clock::now();
+                total_duration += duration_cast<microseconds>(stop - start).count();
+            }
 
-            auto start = high_resolution_clock::now();
-            lcs_length(s1, s2, dp);
-            set<string> lcs_set;
-            find_all_lcs(s1, s2, m, n, dp, "", lcs_set);
-            auto stop = high_resolution_clock::now();
-            auto duration = duration_cast<microseconds>(stop - start);
-
-            file << m << "," << n << "," << duration.count() << "\n";
+            long long avg_duration = total_duration / runs;
+            file << m << "," << n << "," << avg_duration << "\n";
         }
     }
 
     file.close();
     cout << "CSV file generated with LCS computation times." << endl;
-
     return 0;
 }
